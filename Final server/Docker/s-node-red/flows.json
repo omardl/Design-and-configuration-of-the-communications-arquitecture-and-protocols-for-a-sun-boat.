@@ -1,0 +1,1399 @@
+[
+    {
+        "id": "d981927c11088438",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "2497666d5f80668a",
+        "type": "mqtt in",
+        "z": "d981927c11088438",
+        "name": "",
+        "topic": "rsfm/mqtt/ultrasonic",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "42b53939f07ab2b6",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 230,
+        "y": 180,
+        "wires": [
+            [
+                "611bb70b0659498f",
+                "80a5e78e9b74aebd",
+                "d77dfea4199e9488",
+                "9186e7b7a11584a0"
+            ]
+        ]
+    },
+    {
+        "id": "9e8cb2f163fb7297",
+        "type": "mqtt in",
+        "z": "d981927c11088438",
+        "name": "",
+        "topic": "rsfm/mqtt/pitch",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "42b53939f07ab2b6",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 220,
+        "y": 420,
+        "wires": [
+            [
+                "6b825093c7a3adea",
+                "8d01dd3cb9af1955",
+                "054fbb9e6cc4b870",
+                "0abfcca55c66201c"
+            ]
+        ]
+    },
+    {
+        "id": "8434fe68cf3ff2df",
+        "type": "mqtt in",
+        "z": "d981927c11088438",
+        "name": "",
+        "topic": "rsfm/mqtt/roll",
+        "qos": "2",
+        "datatype": "utf8",
+        "broker": "42b53939f07ab2b6",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 210,
+        "y": 660,
+        "wires": [
+            [
+                "054a141c8619f8a7",
+                "e1e501904c4d10fc",
+                "a194de19acfd388d",
+                "7a90e4552247be38"
+            ]
+        ]
+    },
+    {
+        "id": "de310af125a74a58",
+        "type": "mqtt in",
+        "z": "d981927c11088438",
+        "name": "",
+        "topic": "rsfm/mqtt/location",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "42b53939f07ab2b6",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 200,
+        "y": 840,
+        "wires": [
+            [
+                "72c0eef2a5add403",
+                "8560fdffc8519106"
+            ]
+        ]
+    },
+    {
+        "id": "609fe890b5c1de73",
+        "type": "mqtt out",
+        "z": "d981927c11088438",
+        "name": "rsfm/mqtt/ship",
+        "topic": "rsfm/mqtt/ship",
+        "qos": "2",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "42b53939f07ab2b6",
+        "x": 640,
+        "y": 1040,
+        "wires": []
+    },
+    {
+        "id": "56f3932dd67d5b8c",
+        "type": "ui_button",
+        "z": "d981927c11088438",
+        "name": "",
+        "group": "ad5118e5d34f525d",
+        "order": 7,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Activar las alarmas del barco",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "boton",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 240,
+        "y": 1040,
+        "wires": [
+            [
+                "609fe890b5c1de73"
+            ]
+        ]
+    },
+    {
+        "id": "611bb70b0659498f",
+        "type": "ui_gauge",
+        "z": "d981927c11088438",
+        "name": "",
+        "group": "8c735e54991a60f6",
+        "order": 1,
+        "width": "6",
+        "height": "6",
+        "gtype": "gage",
+        "title": "Ultrasonidos",
+        "label": "units",
+        "format": "{{value}}",
+        "min": "500",
+        "max": "0",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 610,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "8d01dd3cb9af1955",
+        "type": "ui_gauge",
+        "z": "d981927c11088438",
+        "name": "",
+        "group": "8c735e54991a60f6",
+        "order": 3,
+        "width": "6",
+        "height": "8",
+        "gtype": "gage",
+        "title": "PITCH",
+        "label": "units",
+        "format": "{{value}}",
+        "min": "-90",
+        "max": "90",
+        "colors": [
+            "#ca3838",
+            "#00b500",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 570,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "e1e501904c4d10fc",
+        "type": "ui_gauge",
+        "z": "d981927c11088438",
+        "name": "",
+        "group": "8c735e54991a60f6",
+        "order": 5,
+        "width": "6",
+        "height": "8",
+        "gtype": "gage",
+        "title": "ROLL",
+        "label": "units",
+        "format": "{{value}}",
+        "min": "-90",
+        "max": "90",
+        "colors": [
+            "#ca3838",
+            "#00b500",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 590,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "80a5e78e9b74aebd",
+        "type": "ui_chart",
+        "z": "d981927c11088438",
+        "name": "",
+        "group": "8c735e54991a60f6",
+        "order": 1,
+        "width": "6",
+        "height": "6",
+        "label": "Ultrasonidos",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 610,
+        "y": 60,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6b825093c7a3adea",
+        "type": "ui_chart",
+        "z": "d981927c11088438",
+        "name": "",
+        "group": "8c735e54991a60f6",
+        "order": 2,
+        "width": "6",
+        "height": "8",
+        "label": "PITCH",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 570,
+        "y": 460,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "054a141c8619f8a7",
+        "type": "ui_chart",
+        "z": "d981927c11088438",
+        "name": "",
+        "group": "8c735e54991a60f6",
+        "order": 4,
+        "width": "6",
+        "height": "8",
+        "label": "ROLL",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 590,
+        "y": 680,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9fd40c539f5f60c2",
+        "type": "ui_template",
+        "z": "d981927c11088438",
+        "group": "15c355f7c720d575",
+        "name": "Stream",
+        "order": 5,
+        "width": "10",
+        "height": "6",
+        "format": "<p>Live Streaming</p>\n<img src = \"http://localhost:3015/start\"/>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 880,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "85e70009858ae9b1",
+        "type": "ui_template",
+        "z": "d981927c11088438",
+        "group": "ad5118e5d34f525d",
+        "name": "Pitch",
+        "order": 4,
+        "width": "10",
+        "height": "8",
+        "format": "<style>\n   .boat_pitch {\n        width: 300px;\n        height: 300px;\n        position: absolute;\n        margin: auto;\n        top: 0;\n        left: 0;\n        right: 0;\n        bottom: 100;\n        z-index: 1;\n        transform: rotate({{msg.payload}}deg);\n    }\n    \n    .xaxis {\n        position: absolute;\n        width: 95%;\n        z-index: 0;\n        top: 65%;\n        color: cyan;\n        y\n    }\n</style>\n\n<div>\n    <hr class=\"xaxis\">\n    <img src=\"/opfr.png\" class=\"boat_pitch\"  alt=\"Boat Front View\"/>\n    \n</div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 990,
+        "y": 340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c043bb3d0c6338dd",
+        "type": "ui_template",
+        "z": "d981927c11088438",
+        "group": "ad5118e5d34f525d",
+        "name": "Roll",
+        "order": 4,
+        "width": "10",
+        "height": "7",
+        "format": "<style>\n   .boat_roll {\n        width: 500px;\n        height: 300px;\n        position: absolute;\n        margin: auto;\n        top: 0;\n        left: 0;\n        right: 0;\n        bottom: 100;\n        z-index: 1;\n        transform: rotate({{msg.payload}}deg);\n    }\n    \n    .xaxis {\n        position: absolute;\n        width: 95%;\n        z-index: 0;\n        top: 55%;\n        color: cyan;\n    }\n</style>\n\n<div>\n    <hr class=\"xaxis\">\n    <img src=\"/oplat.png\" class=\"boat_roll\" alt=\"Boat Front View\"/>\n</div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 990,
+        "y": 600,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2c1188b02e3c8cfe",
+        "type": "ui_toast",
+        "z": "d981927c11088438",
+        "position": "top right",
+        "displayTime": "3",
+        "highlight": "",
+        "sendall": true,
+        "outputs": 0,
+        "ok": "OK",
+        "cancel": "",
+        "raw": true,
+        "className": "",
+        "topic": "msg.payload",
+        "name": "alarm pitch",
+        "x": 1310,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "f06e3178fc3ffa64",
+        "type": "function",
+        "z": "d981927c11088438",
+        "name": "roll filter",
+        "func": "if (msg.payload > 45 || msg.payload < -45){ \n    var angle = msg.payload;\n    msg.payload = \"ROLL PROBLEMÁTICO!!! (angle: \"+angle+\")\";\n    msg.payload.Time = new Date();\n    return msg;\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1000,
+        "y": 660,
+        "wires": [
+            [
+                "70a9214568924e55"
+            ]
+        ]
+    },
+    {
+        "id": "70a9214568924e55",
+        "type": "trigger",
+        "z": "d981927c11088438",
+        "name": "",
+        "op1": "",
+        "op2": "",
+        "op1type": "pay",
+        "op2type": "payl",
+        "duration": "1",
+        "extend": false,
+        "overrideDelay": false,
+        "units": "s",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 1140,
+        "y": 660,
+        "wires": [
+            [
+                "2c1188b02e3c8cfe",
+                "dcee508f4afa92f2"
+            ]
+        ]
+    },
+    {
+        "id": "a194de19acfd388d",
+        "type": "function",
+        "z": "d981927c11088438",
+        "name": "function 1",
+        "func": "var stripped = msg.payload.trim();\nvar values = stripped.split('|');\n// As you are only appear to be interested in the value, \n// use [1] to access the actual value. The array is zero-indexed, meaning\n// that the first item is [0], and the second is thus [1].\nmsg.payload = values[0];\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 600,
+        "y": 620,
+        "wires": [
+            [
+                "c043bb3d0c6338dd",
+                "f06e3178fc3ffa64"
+            ]
+        ]
+    },
+    {
+        "id": "054fbb9e6cc4b870",
+        "type": "function",
+        "z": "d981927c11088438",
+        "name": "function 2",
+        "func": "var stripped = msg.payload.trim();\nvar values = stripped.split('|');\n// As you are only appear to be interested in the value, \n// use [1] to access the actual value. The array is zero-indexed, meaning\n// that the first item is [0], and the second is thus [1].\nmsg.payload = values[0];\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 560,
+        "y": 360,
+        "wires": [
+            [
+                "85e70009858ae9b1",
+                "64c287209d843086"
+            ]
+        ]
+    },
+    {
+        "id": "dcee508f4afa92f2",
+        "type": "mqtt out",
+        "z": "d981927c11088438",
+        "name": "rsfm/mqtt/roll2",
+        "topic": "rsfm/mqtt/roll2",
+        "qos": "2",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "42b53939f07ab2b6",
+        "x": 1320,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "64c287209d843086",
+        "type": "function",
+        "z": "d981927c11088438",
+        "name": "pitch filter",
+        "func": "if (msg.payload > 45 || msg.payload < -45 ){ \n    var angle = msg.payload;\n    msg.payload = \"PITCH PROBLEMÁTICO!!! (angle: \"+angle+\")\";\n    msg.payload.Time = new Date();\n    return msg;\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1000,
+        "y": 400,
+        "wires": [
+            [
+                "63deea37143c4380"
+            ]
+        ]
+    },
+    {
+        "id": "63deea37143c4380",
+        "type": "trigger",
+        "z": "d981927c11088438",
+        "name": "",
+        "op1": "",
+        "op2": "",
+        "op1type": "pay",
+        "op2type": "payl",
+        "duration": "1",
+        "extend": false,
+        "overrideDelay": false,
+        "units": "s",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 1140,
+        "y": 400,
+        "wires": [
+            [
+                "2c2391805ce0b423",
+                "f38d3bf84c85a271"
+            ]
+        ]
+    },
+    {
+        "id": "2c2391805ce0b423",
+        "type": "ui_toast",
+        "z": "d981927c11088438",
+        "position": "top right",
+        "displayTime": "3",
+        "highlight": "",
+        "sendall": true,
+        "outputs": 0,
+        "ok": "OK",
+        "cancel": "",
+        "raw": true,
+        "className": "",
+        "topic": "msg.payload",
+        "name": "alarm roll",
+        "x": 1300,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "f38d3bf84c85a271",
+        "type": "mqtt out",
+        "z": "d981927c11088438",
+        "name": "rsfm/mqtt/pitch2",
+        "topic": "rsfm/mqtt/pitch2",
+        "qos": "2",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "42b53939f07ab2b6",
+        "x": 1320,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "7c7b3a170a6323fc",
+        "type": "function",
+        "z": "d981927c11088438",
+        "name": "ultra filter",
+        "func": "if (msg.payload <300){ \n    var angle = msg.payload;\n    msg.payload = \"Ultrasonidos demasiado cerca (distancia: \"+angle+\")\";\n    msg.payload.Time = new Date();\n    return msg;\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 780,
+        "y": 160,
+        "wires": [
+            [
+                "7f6d70ca8daf14ba"
+            ]
+        ]
+    },
+    {
+        "id": "7f6d70ca8daf14ba",
+        "type": "trigger",
+        "z": "d981927c11088438",
+        "name": "",
+        "op1": "",
+        "op2": "",
+        "op1type": "pay",
+        "op2type": "payl",
+        "duration": "1",
+        "extend": false,
+        "overrideDelay": false,
+        "units": "s",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 920,
+        "y": 160,
+        "wires": [
+            [
+                "49d38da2f5f84003",
+                "fab1112d75133e2b"
+            ]
+        ]
+    },
+    {
+        "id": "49d38da2f5f84003",
+        "type": "ui_toast",
+        "z": "d981927c11088438",
+        "position": "top right",
+        "displayTime": "3",
+        "highlight": "",
+        "sendall": true,
+        "outputs": 0,
+        "ok": "OK",
+        "cancel": "",
+        "raw": true,
+        "className": "",
+        "topic": "msg.payload",
+        "name": "alarm roll",
+        "x": 1080,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "fab1112d75133e2b",
+        "type": "mqtt out",
+        "z": "d981927c11088438",
+        "name": "rsfm/mqtt/ultra2",
+        "topic": "rsfm/mqtt/ultra2",
+        "qos": "2",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "42b53939f07ab2b6",
+        "x": 1100,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "d77dfea4199e9488",
+        "type": "function",
+        "z": "d981927c11088438",
+        "name": "function 3",
+        "func": "var stripped = msg.payload.trim();\nvar values = stripped.split('|');\n// As you are only appear to be interested in the value, \n// use [1] to access the actual value. The array is zero-indexed, meaning\n// that the first item is [0], and the second is thus [1].\nmsg.payload = values[0];\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 600,
+        "y": 160,
+        "wires": [
+            [
+                "7c7b3a170a6323fc"
+            ]
+        ]
+    },
+    {
+        "id": "248f8740cfdb5417",
+        "type": "join",
+        "z": "d981927c11088438",
+        "name": "",
+        "mode": "custom",
+        "build": "object",
+        "property": "topic",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "2",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 670,
+        "y": 1260,
+        "wires": [
+            [
+                "2da75c03af886f75"
+            ]
+        ]
+    },
+    {
+        "id": "a2016cf8cf12f754",
+        "type": "ui_date_picker",
+        "z": "d981927c11088438",
+        "name": "",
+        "label": "date",
+        "group": "180485574ec9f44a",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "topic": "topic",
+        "topicType": "msg",
+        "className": "",
+        "x": 170,
+        "y": 1180,
+        "wires": [
+            [
+                "1b4400a7352a71f1"
+            ]
+        ]
+    },
+    {
+        "id": "1b4400a7352a71f1",
+        "type": "function",
+        "z": "d981927c11088438",
+        "name": "function 17",
+        "func": "msg.fechaActual = new Date();\nmsg.fechaActual = msg.fechaActual.getDate();\n\nmsg.payload = new Date(msg.payload);\n//msg.payload = msg.payload.toLocaleDateString(\"en-US\");\nmsg.data1 = msg.payload;\nmsg.topic = msg.payload;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 400,
+        "y": 1180,
+        "wires": [
+            [
+                "248f8740cfdb5417"
+            ]
+        ]
+    },
+    {
+        "id": "060e66dca95af32b",
+        "type": "function",
+        "z": "d981927c11088438",
+        "name": "function 18",
+        "func": "msg.fechaActual = new Date();\nmsg.fechaActual = msg.fechaActual.getDate();\n\nmsg.payload = new Date(msg.payload);\n//msg.payload = msg.payload.toLocaleDateString(\"en-US\");\nmsg.data2 = msg.payload;\nmsg.topic = msg.payload;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 400,
+        "y": 1260,
+        "wires": [
+            [
+                "248f8740cfdb5417"
+            ]
+        ]
+    },
+    {
+        "id": "75fbf0381737875c",
+        "type": "ui_date_picker",
+        "z": "d981927c11088438",
+        "name": "",
+        "label": "date",
+        "group": "180485574ec9f44a",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "topic": "topic",
+        "topicType": "msg",
+        "className": "",
+        "x": 170,
+        "y": 1260,
+        "wires": [
+            [
+                "060e66dca95af32b"
+            ]
+        ]
+    },
+    {
+        "id": "2da75c03af886f75",
+        "type": "file in",
+        "z": "d981927c11088438",
+        "name": "",
+        "filename": "bbdd.json",
+        "filenameType": "str",
+        "format": "",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "utf8",
+        "allProps": false,
+        "x": 220,
+        "y": 1360,
+        "wires": [
+            [
+                "4b2c8e714ff69c95"
+            ]
+        ]
+    },
+    {
+        "id": "d89c7b39924e238d",
+        "type": "function",
+        "z": "d981927c11088438",
+        "name": "function 19",
+        "func": "msg.saved = msg.payload;\n\nvar fromTime = new Date(msg.data1).getTime();\nvar toTime = new Date(msg.data2).getTime();\n\nif(fromTime >= toTime){\n    fromTime = toTime;\n    toTime = new Date(msg.data1).getTime();\n}\n\nvar filteredDates = [];\nvar row, date;\n\nfor (var i=0; i<msg.saved.array.length;i++) {\n\n    row = msg.saved.array[i].timeRecv.split(\" \");\n    row = row[0];\n    date = new Date(row);\n    msg.prueba = date;\n    if (date.getTime() >= fromTime && date.getTime() <= toTime) {\n        msg.data += JSON.stringify(msg.saved.array[i]);\n        msg.payload += msg.saved.array[i].pitchroll[0].roll +\"\\n\";\n    }\n}\n//console.log(msg.payload);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 890,
+        "y": 1480,
+        "wires": [
+            [
+                "c7f645bb46dffba5"
+            ]
+        ]
+    },
+    {
+        "id": "4b2c8e714ff69c95",
+        "type": "json",
+        "z": "d981927c11088438",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 670,
+        "y": 1360,
+        "wires": [
+            [
+                "d89c7b39924e238d",
+                "999c1ccad29f0a66",
+                "1b2cdc8a7e1633e9"
+            ]
+        ]
+    },
+    {
+        "id": "c7f645bb46dffba5",
+        "type": "split",
+        "z": "d981927c11088438",
+        "name": "",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 1110,
+        "y": 1480,
+        "wires": [
+            [
+                "79c5bc4f529efaae"
+            ]
+        ]
+    },
+    {
+        "id": "79c5bc4f529efaae",
+        "type": "ui_chart",
+        "z": "d981927c11088438",
+        "name": "",
+        "group": "73c6d58ecdeee8e0",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "label": "roll",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "Esperando fechas...",
+        "dot": true,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": true,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1350,
+        "y": 1480,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "885f4665d5d856e6",
+        "type": "ui_button",
+        "z": "d981927c11088438",
+        "name": "",
+        "group": "180485574ec9f44a",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "clear",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 890,
+        "y": 1620,
+        "wires": [
+            [
+                "342c207c7fddea71"
+            ]
+        ]
+    },
+    {
+        "id": "342c207c7fddea71",
+        "type": "function",
+        "z": "d981927c11088438",
+        "name": "function 20",
+        "func": "msg.payload = []\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1090,
+        "y": 1620,
+        "wires": [
+            [
+                "79c5bc4f529efaae",
+                "eddc16bfb2fc619b",
+                "3a1c7ca02ad01f39"
+            ]
+        ]
+    },
+    {
+        "id": "999c1ccad29f0a66",
+        "type": "function",
+        "z": "d981927c11088438",
+        "name": "function 21",
+        "func": "msg.saved = msg.payload;\n\nvar fromTime = new Date(msg.data1).getTime();\nvar toTime = new Date(msg.data2).getTime();\n\nif(fromTime >= toTime){\n    fromTime = toTime;\n    toTime = new Date(msg.data1).getTime();\n}\n\nvar filteredDates = [];\nvar row, date;\n\nfor (var i=0; i<msg.saved.array.length;i++) {\n\n    row = msg.saved.array[i].timeRecv.split(\" \");\n    row = row[0];\n    date = new Date(row);\n    msg.prueba = date;\n    if (date.getTime() >= fromTime && date.getTime() <= toTime) {\n        msg.data += JSON.stringify(msg.saved.array[i]);\n        msg.payload += msg.saved.array[i].pitchroll[0].pitch +\"\\n\";\n    }\n}\n//console.log(msg.payload);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 890,
+        "y": 1360,
+        "wires": [
+            [
+                "7fa3b2fc6c86e346"
+            ]
+        ]
+    },
+    {
+        "id": "7fa3b2fc6c86e346",
+        "type": "split",
+        "z": "d981927c11088438",
+        "name": "",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 1110,
+        "y": 1360,
+        "wires": [
+            [
+                "eddc16bfb2fc619b"
+            ]
+        ]
+    },
+    {
+        "id": "eddc16bfb2fc619b",
+        "type": "ui_chart",
+        "z": "d981927c11088438",
+        "name": "",
+        "group": "73c6d58ecdeee8e0",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "pitch",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "Esperando fechas...",
+        "dot": true,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": true,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1350,
+        "y": 1360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1b2cdc8a7e1633e9",
+        "type": "function",
+        "z": "d981927c11088438",
+        "name": "function 22",
+        "func": "msg.saved = msg.payload;\n\nvar fromTime = new Date(msg.data1).getTime();\nvar toTime = new Date(msg.data2).getTime();\n\nif(fromTime >= toTime){\n    fromTime = toTime;\n    toTime = new Date(msg.data1).getTime();\n}\n\nvar filteredDates = [];\nvar row, date;\n\nfor (var i=0; i<msg.saved.array.length;i++) {\n\n    row = msg.saved.array[i].timeRecv.split(\" \");\n    row = row[0];\n    date = new Date(row);\n    msg.prueba = date;\n    if (date.getTime() >= fromTime && date.getTime() <= toTime) {\n        msg.data += JSON.stringify(msg.saved.array[i]);\n        msg.payload += msg.saved.array[i].ultrasonidos +\"\\n\";\n    }\n}\n//console.log(msg.payload);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 890,
+        "y": 1220,
+        "wires": [
+            [
+                "10bc33e9f59c3d03"
+            ]
+        ]
+    },
+    {
+        "id": "10bc33e9f59c3d03",
+        "type": "split",
+        "z": "d981927c11088438",
+        "name": "",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 1090,
+        "y": 1220,
+        "wires": [
+            [
+                "3a1c7ca02ad01f39"
+            ]
+        ]
+    },
+    {
+        "id": "3a1c7ca02ad01f39",
+        "type": "ui_chart",
+        "z": "d981927c11088438",
+        "name": "",
+        "group": "73c6d58ecdeee8e0",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "Ultrasonidos",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "Esperando fechas...",
+        "dot": true,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": true,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1370,
+        "y": 1220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9186e7b7a11584a0",
+        "type": "file",
+        "z": "d981927c11088438",
+        "name": "",
+        "filename": "bbdd.json",
+        "filenameType": "str",
+        "appendNewline": true,
+        "createDir": true,
+        "overwriteFile": "false",
+        "encoding": "none",
+        "x": 600,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "0abfcca55c66201c",
+        "type": "file",
+        "z": "d981927c11088438",
+        "name": "",
+        "filename": "bbdd.json",
+        "filenameType": "str",
+        "appendNewline": true,
+        "createDir": true,
+        "overwriteFile": "false",
+        "encoding": "none",
+        "x": 580,
+        "y": 540,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "72c0eef2a5add403",
+        "type": "file",
+        "z": "d981927c11088438",
+        "name": "",
+        "filename": "bbdd.json",
+        "filenameType": "str",
+        "appendNewline": true,
+        "createDir": true,
+        "overwriteFile": "false",
+        "encoding": "none",
+        "x": 580,
+        "y": 900,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7a90e4552247be38",
+        "type": "file",
+        "z": "d981927c11088438",
+        "name": "",
+        "filename": "bbdd.json",
+        "filenameType": "str",
+        "appendNewline": true,
+        "createDir": true,
+        "overwriteFile": "false",
+        "encoding": "none",
+        "x": 600,
+        "y": 760,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b8f5bb5c7a89a7da",
+        "type": "ui_worldmap",
+        "z": "d981927c11088438",
+        "group": "8c735e54991a60f6",
+        "order": 8,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "lat": "",
+        "lon": "",
+        "zoom": "",
+        "layer": "OSMC",
+        "cluster": "",
+        "maxage": "",
+        "usermenu": "hide",
+        "layers": "hide",
+        "panit": "false",
+        "panlock": "false",
+        "zoomlock": "false",
+        "hiderightclick": "true",
+        "coords": "none",
+        "showgrid": "false",
+        "showruler": "false",
+        "allowFileDrop": "false",
+        "path": "/worldmap",
+        "overlist": "DR,CO,RA,DN,HM",
+        "maplist": "OSMG,OSMC,EsriC,EsriS,EsriT,EsriDG,UKOS",
+        "mapname": "",
+        "mapurl": "",
+        "mapopt": "",
+        "mapwms": false,
+        "x": 860,
+        "y": 840,
+        "wires": []
+    },
+    {
+        "id": "8560fdffc8519106",
+        "type": "function",
+        "z": "d981927c11088438",
+        "name": "function 23",
+        "func": "let locationString = msg.payload.Location.trim().split(\",\");\n\nmsg.payload = {\n    \"name\": \"boat\",\n    \"lat\": locationString[0].replace('\"', ''),\n    \"long\": locationString[0].replace('\"', ''),\n    \"icon\": \"ship\",\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 570,
+        "y": 840,
+        "wires": [
+            [
+                "b8f5bb5c7a89a7da"
+            ]
+        ]
+    },
+    {
+        "id": "42b53939f07ab2b6",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "192.168.0.15",
+        "port": "5001",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "ad5118e5d34f525d",
+        "type": "ui_group",
+        "name": "POS",
+        "tab": "8e390f576cad03b0",
+        "order": 3,
+        "disp": true,
+        "width": "10",
+        "collapse": true,
+        "className": ""
+    },
+    {
+        "id": "8c735e54991a60f6",
+        "type": "ui_group",
+        "name": "SHIP",
+        "tab": "8e390f576cad03b0",
+        "order": 1,
+        "disp": true,
+        "width": "14",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "15c355f7c720d575",
+        "type": "ui_group",
+        "name": "CAMARA",
+        "tab": "8e390f576cad03b0",
+        "order": 2,
+        "disp": true,
+        "width": "10",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "180485574ec9f44a",
+        "type": "ui_group",
+        "name": "Seleccionar fechas",
+        "tab": "86a25ee934262869",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "73c6d58ecdeee8e0",
+        "type": "ui_group",
+        "name": "Datos",
+        "tab": "86a25ee934262869",
+        "order": 2,
+        "disp": false,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "8e390f576cad03b0",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "86a25ee934262869",
+        "type": "ui_tab",
+        "name": "Histórico",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]

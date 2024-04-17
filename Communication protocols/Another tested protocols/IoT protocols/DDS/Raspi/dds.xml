@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dds xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://community.rti.com/schema/6.0.0/rti_dds_profiles.xsd" version="6.0.0">
+
+    <!-- QOS -->
+    <qos_library name="QosLibrary">
+        <qos_profile name="DefaultProfile" base_name="BuiltinQosLibExp::Generic.StrictReliable" is_default_qos="true">
+            <participant_qos>
+                <transport_builtin>
+                    <mask>UDPV4</mask>
+                </transport_builtin>
+            </participant_qos>
+        </qos_profile>
+    </qos_library>
+
+    <!-- types -->
+    <types>
+        <struct name="Ultrasonic">
+            <member name="distance" type="float"/>
+            <member name="timestamp" stringMaxLength="40" type="string"/>
+        </struct>
+        
+        <struct name="PitchRoll">
+            <member name="Pitch" type="float"/>
+            <member name="Roll" type="float"/>
+            <member name="timestamp" stringMaxLength="40" type="string"/>
+        </struct>
+
+        <struct name="GPS">
+            <member name="Latitude" type="float"/>
+            <member name="Longitude" type="float"/>
+            <member name="timestamp" stringMaxLength="40" type="string"/>
+        </struct>
+        
+    </types>
+
+    <!-- Domain Library -->
+    <domain_library name="Sensors">
+        <domain name="MySensors" domain_id="0">
+        
+            <register_type name="Ultrasonic" type_ref="Ultrasonic"/>
+            <topic name="topicUltrasonicSensor" register_type_ref="Ultrasonic"/>
+            
+            <register_type name="PitchRoll" type_ref="PitchRoll"/>
+            <topic name="topicPitchRoll" register_type_ref="PitchRoll"/>
+
+            <register_type name="GPS" type_ref="GPS"/>
+            <topic name="topicGPS" register_type_ref="GPS"/>
+        
+        </domain>
+    </domain_library>
+
+    <!-- Participant Library -->
+    <domain_participant_library name="Participants">
+        <domain_participant name="RSFM" domain_ref="Sensors::MySensors">
+            <publisher name="Raspberry">
+                <data_writer name="TXUltrasonic" topic_ref="topicUltrasonicSensor"/>
+                <data_writer name="TXPitchRoll" topic_ref="topicPitchRoll"/>
+                <data_writer name="TXGPS" topic_ref="topicGPS"/>
+            </publisher>
+            <subscriber name="PCServer">
+                <data_reader name="RXUltrasonic" topic_ref="topicUltrasonicSensor"/>
+                <data_reader name="RXPitchRoll" topic_ref="topicPitchRoll"/>
+                <data_reader name="RXGPS" topic_ref="topicGPS"/>
+            </subscriber>
+        </domain_participant>
+    </domain_participant_library>
+
+</dds>
