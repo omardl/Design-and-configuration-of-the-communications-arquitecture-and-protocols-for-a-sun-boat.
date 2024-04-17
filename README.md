@@ -11,7 +11,7 @@ A su vez, una interfaz web permitirá observar los datos recibidos y el streamin
 
 ## Tecnologías
 - Wi-Fi
-- NBIoT
+- NB-IoT
 - LTE
 
 Se ha usado Wi-Fi como tecnología inicial para estudiar adecuadamente el uso de diferentes protocolos en un entorno más cómodo. En base al alcance requerido y la necesidad de una tasa mínima que permita la retransmisión de la webcam, se ha seleccionado LTE como tecnología.
@@ -47,12 +47,12 @@ Para una visualización más cómoda del Pitch-Roll, se usan dos imágenes que r
 
 
 
-También podrá verse su locazación en tiempo real a través de un mapa. 
+También puede verse su locazación en tiempo real a través de un mapa. 
 
 ![Dashboard Location](https://github.com/omardl/Sun-boat--RSFM-GETT-UVigo/assets/105445540/3efd3739-a6c3-4c10-bb37-5f7a8bc5b20e)
 
 
-La información de los sensores, salvo la del GPS, se guardará en un archivo que podrá ser consultado posteriormente en la pestaña Histórico seleccionando la fecha deseada.
+La información de los sensores, salvo la del GPS, se guarda en un archivo que podrá ser consultado posteriormente en la pestaña Histórico seleccionando la fecha deseada.
 
 ![Dashboard Historic](https://github.com/omardl/Sun-boat--RSFM-GETT-UVigo/assets/105445540/e2bce654-adf2-4829-b22b-a37fb5970296)
 
