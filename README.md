@@ -28,36 +28,35 @@ Dado que era un protocolo conocido y usado anteriormente, se ha utilizado TCP in
 También se implementó en cada protocolo la sincronización del NTP para coordinar la Raspberry y el equipo servidor y evitar fallas en el cálculo de los retardos mediante sellos temporales.
 
 ## Arquitectura final
-![Scheme](https://github.com/omardl/Sun-boat--RSFM-GETT-UVigo/assets/105445540/131c9f32-931f-4949-ac52-2e14f6f581c6)
+
+![Scheme](https://github.com/omardl/Design-and-configuration-of-the-communications-arquitecture-and-protocols-for-a-sun-boat./assets/105445540/08537133-a793-41ba-82cf-e5fadc285f47)
 
 
 ## Interfaz
 
 La interfaz principal recoge la información de los sensores mencionados, permitiendo ver el último valor recibido y una gráfica de su variación temporal.
 
-![Dashboard](https://github.com/omardl/Sun-boat--RSFM-GETT-UVigo/assets/105445540/ff5b6057-d3dd-4c42-a6fe-fb14ad8389b5)
+![Dashboard](https://github.com/omardl/Design-and-configuration-of-the-communications-arquitecture-and-protocols-for-a-sun-boat./assets/105445540/039ff6ea-65b2-4e5f-9903-0a558485f97d)
 
 
 Para una visualización más cómoda del Pitch-Roll, se usan dos imágenes que representan la visión lateral y frontal del barco y que rotarán en función de los valores del sensor.
 
-![Dashboard Pitch](https://github.com/omardl/Sun-boat--RSFM-GETT-UVigo/assets/105445540/47e057a3-c9b1-428e-a30e-e0c4c48d94c6)
+![DashboardPitch](https://github.com/omardl/Design-and-configuration-of-the-communications-arquitecture-and-protocols-for-a-sun-boat./assets/105445540/fc19df9e-cd9b-4afd-ab67-dc45c383500a)
 
-![Dashboard Roll](https://github.com/omardl/Sun-boat--RSFM-GETT-UVigo/assets/105445540/82cadf60-548e-42df-b894-72d77c1cf59a)
-
-
+![DashboardRoll](https://github.com/omardl/Design-and-configuration-of-the-communications-arquitecture-and-protocols-for-a-sun-boat./assets/105445540/58f82195-073b-4b6b-879c-320f9e92e8eb)
 
 
 También puede verse su locazación en tiempo real a través de un mapa. 
 
-![Dashboard Location](https://github.com/omardl/Sun-boat--RSFM-GETT-UVigo/assets/105445540/3efd3739-a6c3-4c10-bb37-5f7a8bc5b20e)
+![DashboardLocation](https://github.com/omardl/Design-and-configuration-of-the-communications-arquitecture-and-protocols-for-a-sun-boat./assets/105445540/72115fec-c98d-453e-8df3-20b17cebd110)
 
 
 La información de los sensores, salvo la del GPS, se guarda en un archivo que podrá ser consultado posteriormente en la pestaña Histórico seleccionando la fecha deseada.
 
-![Dashboard Historic](https://github.com/omardl/Sun-boat--RSFM-GETT-UVigo/assets/105445540/e2bce654-adf2-4829-b22b-a37fb5970296)
-
+![DashboardLog](https://github.com/omardl/Design-and-configuration-of-the-communications-arquitecture-and-protocols-for-a-sun-boat./assets/105445540/8a268a3b-12d0-4b98-9cd8-c40cef875d4e)
 
 ---------
+
 ### Proyecto desarrollado para la asignatura "Redes inalámbricas y móviles" del grado en Ingeniería de Tecnologías de Telecomunicación de la UVigo
 
 ### Autores
