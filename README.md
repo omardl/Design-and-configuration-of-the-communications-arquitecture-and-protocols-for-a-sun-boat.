@@ -9,6 +9,8 @@ El barco también dispondrá de una webcam para la transmisión en directo.
 
 A su vez, una interfaz web permitirá observar los datos recibidos y el streaming, y permitirá enviar una señal sonora y visual activando una serie de buzzers y leds en el barco.
 
+El proyecto fue realizado en equipo utilizando metodología Scrum y usando las herramientas Jira y Confluence.
+
 ## Tecnologías
 - Wi-Fi
 - NB-IoT
